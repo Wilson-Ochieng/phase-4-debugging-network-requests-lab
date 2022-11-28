@@ -63,11 +63,18 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+ I checked the  server logs and the network tab in the browser Dev tools and got the same error: "#<NameError: uninitialized constant ToysController::Toys>"
+Changed the Toys typo to Toys and that fixed it.
+
 
 - Update the number of likes for a toy
 
-  - How I debugged:
+  - How I debugged
+  a.The error was: "Unhandled Rejection (SyntaxError): Unexpected end of JSON input" because there was no a json response from the server.
+  b.I set the api to render the updated toy in json format instead of no head content.
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+a.Checked the server logs noting this error: "ActionController::RoutingError (No route matches [DELETE] "/toys/8")"
+b.I solved it by creating the required routes.
